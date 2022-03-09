@@ -26,17 +26,7 @@
         />
         <link rel="manifest" href="./favicons/site.webmanifest" />
 
-        <!-- google fonts -->
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-            rel="stylesheet"
-        /> -->
-
-        <!-- stylesheets -->
-        <!-- <link rel="stylesheet" href="./css/reset.css" />
-        <link rel="stylesheet" href="./css/styles.css" /> -->
+        <link rel="stylesheet" href="styles.css" />
 
         <!-- scripts -->
         <link
@@ -45,49 +35,203 @@
         />
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-        <script src="./js/main.js" defer></script>
     </head>
     <body>
         <!-- jQuery Mobile Area -->
-        <div data-role="page" data-title="CharactersDB">
+
+        <!-- home -->
+        <div data-role="page" id="home" class="ui-responsive-panel">
             <div data-role="header" data-theme="b">
                 <h1>CharactersDB</h1>
                 <a href="#nav-panel" data-icon="bars" data-iconpos="notext"
                     >Menu</a
                 >
-                <a href="#login-form" data-icon="gear" data-iconpos="notext"
+                <a href="#add-form" data-icon="user" data-iconpos="notext"
                     >Login</a
                 >
             </div>
-
-            <div data-role="main"></div>
-
-            <div data-role="footer" data-position="fixed" data-theme="b">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#" data-icon="user">Characters</a></li>
-                        <li><a href="#" data-icon="grid">Game</a></li>
-                        <li><a href="#" data-icon="info">About</a></li>
-                        <li><a href="#" data-icon="comment">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- nav and things -->
+            <div data-role="main" class="ui-content"></div>
+            <!-- navigation paneling -->
             <div
                 data-role="panel"
                 data-display="push"
                 data-theme="b"
                 id="nav-panel"
             >
-                <h3>CharactersDB</h3>
                 <ul data-role="listview">
-                    <li><a href="#characterdb">Characters</a></li>
-                    <li><a href="#">Game</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li data-icon="delete">
+                        <a href="#" data-rel="close">Close Menu</a>
+                    </li>
+                    <li><a href="#home" data-transition="flow">Home</a></li>
+                    <li>
+                        <a href="#charactersdb" data-transition="slide"
+                            >Characters</a
+                        >
+                    </li>
+                    <li><a href="#game" data-transition="slide">Games</a></li>
+                    <li>
+                        <a href="#contact" data-transition="slide">Contact</a>
+                    </li>
                 </ul>
             </div>
+            <!-- /navigation paneling -->
+
+            <!-- form -->
+            <div
+                data-role="panel"
+                data-position="right"
+                data-display="reveal"
+                data-theme="b"
+                id="add-form"
+            >
+                <form class="userForm">
+                    <h2>Login</h2>
+                    <label for="name">Username:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        value=""
+                        data-clear-btn="true"
+                        data-mini="true"
+                    />
+                    <label for="password">Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        value=""
+                        data-clear-btn="true"
+                        autocomplete="off"
+                        data-mini="true"
+                    />
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <a
+                                href="#"
+                                data-rel="close"
+                                class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini"
+                                >Cancel</a
+                            >
+                        </div>
+                        <div class="ui-block-b">
+                            <a
+                                href="#"
+                                data-rel="close"
+                                class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini"
+                                >Save</a
+                            >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /form -->
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a
+                                href="#home"
+                                data-icon="home"
+                                data-transition="slide"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#charactersdb"
+                                data-icon="star"
+                                data-transition="slide"
+                                >Characters</a
+                            >
+                        </li>
+                        <li>
+                            <a href="" data-icon="grid" data-transition="slide"
+                                >Games</a
+                            >
+                        </li>
+                        <li>
+                            <a href="" data-icon="phone" data-transition="slide"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <!-- /home -->
+
+        <!-- characters -->
+        <div data-role="page" id="charactersdb">
+            <div data-role="header" data-theme="b">
+                <h1>Character List</h1>
+                <a href="#home" data-icon="carat-l">Home</a>
+            </div>
+            <div data-role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li>
+                        <a
+                            href="https://tekken.fandom.com/wiki/Jin_Kazama#Story"
+                            ><img src="img/jinkazama.JPG" alt="Jin Kazama" />
+                            <h2>Jin Kazama</h2>
+                            <p>
+                                Jin is Kazuya Mishima and Jun Kazama's son. He
+                                received intense training under his grandfather
+                                Heihachi Mishima - all in an effort to avenge
+                                the loss of his mother by fighting and defeating
+                                Ogre.
+                            </p></a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="https://sample.com"
+                            ><img src="img/sample.png" alt="sample" />
+                            <h2>sample</h2>
+                            <p>basic bruh</p></a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a
+                                href="#home"
+                                data-icon="home"
+                                data-transition="slide"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#charactersdb"
+                                data-icon="star"
+                                data-transition="slide"
+                                >Characters</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#game"
+                                data-icon="grid"
+                                data-transition="slide"
+                                >Games</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#contact"
+                                data-icon="phone"
+                                data-transition="slide"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /characters -->
     </body>
 </html>

@@ -1,0 +1,12 @@
+.ui-btn-fa {
+    padding-left: 2.5em;
+}
+.ui-btn-fa .fa {
+    position: absolute;
+    left: 9px;
+    width: 22px;
+    height: 22px;
+}
+.ui-btn-fa .fa:before {
+    line-height: 22px !important;
+}
