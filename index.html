@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Starter Kit SCSS</title>
+        <title>CharactersDB</title>
 
         <!-- favicons -->
         <link
@@ -35,6 +35,11 @@
         />
         <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHSAu7FyD6UPdDxiIdyHeR6e60eRhOi9U"
+            type="text/javascript"
+        ></script>
+        <script src="main.js" defer></script>
     </head>
     <body>
         <!-- jQuery Mobile Area -->
@@ -42,7 +47,11 @@
         <!-- home -->
         <div data-role="page" id="home" class="ui-responsive-panel">
             <div data-role="header" data-theme="b">
-                <h1>CharactersDB</h1>
+                <img
+                    class="banner"
+                    src="img/banner.jpg"
+                    alt="characterdb banner"
+                />
                 <a href="#nav-panel" data-icon="bars" data-iconpos="notext"
                     >Menu</a
                 >
@@ -50,7 +59,22 @@
                     >Login</a
                 >
             </div>
-            <div data-role="main" class="ui-content"></div>
+            <div data-role="main" class="ui-content">
+                <h2>Welcome to the CharactersDB</h2>
+                <p>
+                    CharactersDB is a site where you can find some of the best
+                    video game characters that have been developed by various
+                    developers. If you like to get your favorite character to be
+                    added in the database, don't hesitate to contact us!
+                </p>
+                <p>
+                    <img
+                        class="hero-img"
+                        src="img/darksouls.jpg"
+                        alt="darksouls"
+                    />
+                </p>
+            </div>
             <!-- navigation paneling -->
             <div
                 data-role="panel"
@@ -74,7 +98,7 @@
             </div>
             <!-- /navigation paneling -->
 
-            <!-- form -->
+            <!-- login form -->
             <div
                 data-role="panel"
                 data-position="right"
@@ -123,7 +147,7 @@
                     </div>
                 </form>
             </div>
-            <!-- /form -->
+            <!-- /login form -->
             <div data-role="footer" data-position="fixed" data-theme="b">
                 <div data-role="navbar">
                     <ul>
@@ -136,10 +160,10 @@
                             >
                         </li>
                         <li>
-                            <a href="" data-icon="grid">Games</a>
+                            <a href="#game" data-icon="grid">Games</a>
                         </li>
                         <li>
-                            <a href="" data-icon="phone">Contact</a>
+                            <a href="#contact" data-icon="phone">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -151,10 +175,15 @@
         <div data-role="page" id="charactersdb">
             <div data-role="header" data-theme="b">
                 <h1>Character List</h1>
+                <img
+                    class="banner"
+                    src="img/banner.jpg"
+                    alt="characterdb banner"
+                />
                 <a href="#home" data-icon="carat-l">Home</a>
             </div>
             <div data-role="main" class="ui-content">
-                <ul data-role="listview" data-inset="true">
+                <ul data-role="listview" data-inset="true" data-theme="b">
                     <li>
                         <a
                             href="https://tekken.fandom.com/wiki/Jin_Kazama#Story"
@@ -171,10 +200,38 @@
                     </li>
 
                     <li>
-                        <a href="https://sample.com"
-                            ><img src="img/sample.png" alt="sample" />
-                            <h2>sample</h2>
-                            <p>basic bruh</p></a
+                        <a href="https://streetfighter.fandom.com/wiki/Ryu"
+                            ><img src="img/ryu.jpg" alt="Ryu" />
+                            <h2>Ryu</h2>
+                            <p>
+                                Ryu is the main protagonist of the Street
+                                Fighter series, first appearing in the original
+                                Street Fighter. He is an experienced martial
+                                artist, highly focused on his training, aiming
+                                to become the strongest he can.
+                            </p></a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Mario"
+                            ><img src="img/mario.jpg" alt="Mario" />
+                            <h2>Ryu</h2>
+                            <p>
+                                Mario is a fictional character created by
+                                Japanese video game designer Shigeru Miyamoto.
+                                He is the title character of the Mario video
+                                game franchise and the mascot of Japanese video
+                                game company Nintendo. Mario has appeared in
+                                over 200 video games since his creation.
+                                Depicted as a short, pudgy, Italian plumber who
+                                resides in the Mushroom Kingdom, his adventures
+                                generally center on rescuing Princess Peach from
+                                the Koopa villain Bowser. Mario has access to a
+                                variety of power-ups that give him different
+                                abilities. Mario's fraternal twin brother is
+                                Luigi.
+                            </p></a
                         >
                     </li>
                 </ul>
@@ -201,5 +258,165 @@
             </div>
         </div>
         <!-- /characters -->
+
+        <!-- game list -->
+        <div data-role="page" id="game">
+            <div data-role="header" data-theme="b">
+                <h1>Game List</h1>
+                <img
+                    class="banner"
+                    src="img/banner.jpg"
+                    alt="characterdb banner"
+                />
+                <a href="#home" data-icon="carat-l">Home</a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <div data-role="collapsibleset" data-theme="b">
+                    <div data-role="collapsible">
+                        <h3>Tekken</h3>
+                        <ul class="list-char">
+                            <li>Jin Kazama</li>
+                            <li>Heihachi Mishima</li>
+                            <li>Kazuya Mishima</li>
+                            <li>Lily Rochefort</li>
+                            <li>Yoshimitsu</li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Street Fighter</h3>
+                        <ul class="list-char">
+                            <li>Ryu</li>
+                            <li>Ken</li>
+                            <li>Chun Li</li>
+                            <li>Guile</li>
+                            <li>Cammy</li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Super Mario</h3>
+                        <ul class="list-char">
+                            <li>Mario</li>
+                            <li>Luigi</li>
+                            <li>Peach</li>
+                            <li>Bowser</li>
+                            <li>Goomba</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#home" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#charactersdb" data-icon="star"
+                                >Characters</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#game" data-icon="grid">Games</a>
+                        </li>
+                        <li>
+                            <a href="#contact" data-icon="phone">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /game list -->
+
+        <!-- contact -->
+        <div data-role="page" id="contact">
+            <div data-role="header" data-theme="b">
+                <h1>Contact</h1>
+                <img
+                    class="banner"
+                    src="img/banner.jpg"
+                    alt="characterdb banner"
+                />
+                <a href="#home" data-icon="carat-l">Home</a>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <h2>Contact Us</h2>
+                <p>Want your favorite character added? send us a message!</p>
+                <form class="contactForm">
+                    <div>
+                        <label for="fullname">Full Name:</label>
+                        <input
+                            type="text"
+                            name="text-basic"
+                            id="text-basic"
+                            value=""
+                            placeholder="John Doe"
+                        />
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            value=""
+                            placeholder="johndoe@xyz.com"
+                        />
+                    </div>
+                    <div>
+                        <label for="tel">Tel:</label>
+                        <input
+                            type="tel"
+                            name="tel"
+                            id="tel"
+                            value=""
+                            placeholder="543-123-4567"
+                        />
+                    </div>
+                    <div>
+                        <label for="file">File:</label>
+                        <input type="file" name="file" id="file" value="" />
+                    </div>
+                    <div>
+                        <label for="textarea">Description:</label>
+                        <textarea
+                            name="textarea"
+                            id="textarea"
+                            cols="40"
+                            rows="10"
+                            placeholder="Insert character info here!"
+                        ></textarea>
+                    </div>
+                </form>
+                <div id="map-page" data-url="map-page">
+                    <p>If you like to visit us, we are here!</p>
+                    <div class="ui-content" id="map-canvas"></div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="b">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="#home" data-icon="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#charactersdb" data-icon="star"
+                                >Characters</a
+                            >
+                        </li>
+                        <li>
+                            <a href="#game" data-icon="grid">Games</a>
+                        </li>
+                        <li>
+                            <a href="#contact" data-icon="phone">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /contact -->
     </body>
 </html>
