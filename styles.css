@@ -25,3 +25,8 @@
 .list-char li {
     list-style-type: square;
 }
+
+.address-info {
+    font-size: 12px;
+    font-style: italic;
+}
